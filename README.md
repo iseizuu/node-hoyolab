@@ -2,9 +2,6 @@
   <h1>node-hoyolab</h1>
 
 <p>
-        <a href="https://github.com/iseizuu/node-hoyolab/actions/workflows/test.yml" target="_blank">
-            <img src="https://img.shields.io/github/actions/workflow/status/iseizuu/node-hoyolab/test.yml?branch=master&amp;label=test&amp;style=flat-square" alt="GitHub Test Action Status" />
-        </a>
         <a href="https://www.npmjs.com/package/node-hoyolab">
             <img src="https://img.shields.io/npm/v/node-hoyolab.svg?logo=npm&logoColor=fff&label=NPM+package&color=red" alt="Node-Hoyolab NPM" />
         </a>
