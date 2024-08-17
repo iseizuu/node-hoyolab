@@ -8,5 +8,4 @@ api
 coverage
 .env
 guide.md
-guide.html
 typedoc.json
