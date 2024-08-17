@@ -1,0 +1,112 @@
+<!DOCTYPE html><html class="default" lang="en"><head><meta charset="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>node-hoyolab - v2.0.0</title><meta name="description" content="Documentation for node-hoyolab"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script defer src="assets/main.js"></script><script async src="assets/icons.js" id="tsd-icons-script"></script><script async src="assets/search.js" id="tsd-search-script"></script><script async src="assets/navigation.js" id="tsd-nav-script"></script></head><body><script>document.documentElement.dataset.theme = localStorage.getItem("tsd-theme") || "os";document.body.style.display="none";setTimeout(() => app?app.showPage():document.body.style.removeProperty("display"),500)</script><header class="tsd-page-toolbar"><div class="tsd-toolbar-contents container"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget tsd-toolbar-icon search no-caption"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-search"></use></svg></label><input type="text" id="tsd-search-field" aria-label="Search"/></div><div class="field"><div id="tsd-toolbar-links"></div></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">node-hoyolab - v2.0.0</a></div><div class="table-cell" id="tsd-widgets"><a href="#" class="tsd-widget tsd-toolbar-icon menu no-caption" data-toggle="menu" aria-label="Menu"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"><use href="assets/icons.svg#icon-menu"></use></svg></a></div></div></header><div class="container container-main"><div class="col-content"><div class="tsd-page-title"><h2>node-hoyolab - v2.0.0</h2></div><div class="tsd-panel tsd-typography"><div align="center">
+  <h1>node-hoyolab</h1>
+<p>
+        <a href="https://www.npmjs.com/package/node-hoyolab">
+            <img src="https://img.shields.io/npm/v/node-hoyolab.svg?logo=npm&logoColor=fff&label=NPM+package&color=red" alt="Node-Hoyolab NPM" />
+        </a>
+        <a href="https://www.npmjs.com/package/hoyoapi" target="_blank">
+            <img src="https://img.shields.io/npm/dt/node-hoyolab.svg?style=flat-square" alt="Total Downloads" />
+        </a>
+        <a href="https://github.com/iseizuu/node-hoyolab/blob/master/LICENSE">
+            <img src="https://img.shields.io/github/license/iseizuu/node-hoyolab?style=flat-square" alt="MIT License" />
+        </a>
+    </p>
+    <p align="center"> 
+    <img src="https://upload-os-bbs.hoyolab.com/upload/2024/01/17/8710bd26132d73c7a07981998d4d2816_2234102251971466197.jpg">
+    </p>
+</div>
+<p>This is a NodeJS library designed as a connector to the Official HoYoLab API, commonly accessed by browsers easily and quickly. This library supports both ESM and CJS, but can only be used in NodeJS environments starting from version 8.17 and above.</p>
+<p>This repository is forked from <a href="https://github.com/vermaysha/hoyoapi/">HoyoApi</a>, which is no longer maintained. Therefore, I have refactored the code, added new features, and will continue to maintain and update this repository.</p>
+<p><a href="./docs/" title="Go to project documentation"><img src="https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge" alt="view - Documentation"></a></p>
+<a id="md:install" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Install<a href="#md:install" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p><a href="https://nodei.co/npm/node-hoyolab"><img src="https://nodei.co/npm/node-hoyolab.png?compact=true" alt="Version"></a></p>
+<p>For NPM <br/>
+<code>npm install hoyoapi</code></p>
+<p>For Yarn <br/>
+<code>yarn install hoyoapi</code></p>
+<a id="md:features" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Features<a href="#md:features" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><table>
+<thead>
+<tr>
+<th>Features</th>
+<th>Genshin Impact</th>
+<th>Honkai Impact</th>
+<th>Honkai Star Rails</th>
+<th>Zenless Zone Zero</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Daily Check-In</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Redeem</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Battle Chronicles</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Diary</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+<tr>
+<td>Daily Note</td>
+<td>✅</td>
+<td>❌</td>
+<td>✅</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>TCG</td>
+<td>✅</td>
+<td>❌</td>
+<td>❌</td>
+<td>❌</td>
+</tr>
+</tbody>
+</table>
+<a id="md:how-to-obtain-hoyolab-cookietoken" class="tsd-anchor"></a><h2 class="tsd-anchor-link">How to obtain HoYoLab Cookie/Token<a href="#md:how-to-obtain-hoyolab-cookietoken" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><ul>
+<li>
+<p>Extension Version (PC)</p>
+<ol>
+<li>Download the extension <a href="https://chromewebstore.google.com/detail/cookie-editor/hlkenndednhfkekhgcdicdfddnkalmdm?hl=id">Cookie-Editor</a> and install it.</li>
+<li>Next, go to Hoyolab and log in with your <a href="https://www.hoyolab.com/home">HoYoLab</a> account.</li>
+<li>Open the extension.</li>
+<li>Once you've opened the extension, copy the required cookies <code>ltoken_v2</code> and <code>ltuid_v2</code>.</li>
+<li>Finally, you can use the cookies to run this package.</li>
+</ol>
+</li>
+<li>
+<p>Inspect Element/Dev Tools (PC)</p>
+<ol>
+<li>Go to Hoyolab and log in with your <a href="https://www.hoyolab.com/home">HoYoLab</a> account.</li>
+<li>Press <code>ctrl+shift+i</code> / right click &gt; Inspect</li>
+<li>Go to Application and go to tab Cookie</li>
+<li>copy the required cookies <code>ltoken_v2</code> and <code>ltuid_v2</code> from cookie tab.</li>
+<li>Done</li>
+</ol>
+</li>
+</ul>
+<a id="md:about-redeem-function" class="tsd-anchor"></a><h2 class="tsd-anchor-link">About Redeem Function<a href="#md:about-redeem-function" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>why the function isnot working?
+because the the API/site <a href="https://genshin.hoyoverse.com/en/gift">Genshin Impact Gift</a> cookie token has a short expiration time, so if it has expired, it needs to be manually refreshed. It has been observed that every few days, when logging in to the game Hoyoverse, it always requests reauthentication first.</p>
+<a id="md:guides" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Guides<a href="#md:guides" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>For detailed guides, see the following:</p>
+<ul>
+<li><a href="media/guide.html">Example Usage</a></li>
+</ul>
+<a id="md:disclaimer" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Disclaimer<a href="#md:disclaimer" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>❤️ Always check for the latest version for new features or bug fixes.</p>
+<p>🚀 If you have an issue or idea, let me know.</p>
+<p>© 2024-present. Licensed under the MIT License.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:install"><span>Install</span></a><a href="#md:features"><span>Features</span></a><a href="#md:how-to-obtain-hoyolab-cookietoken"><span>How to obtain <wbr/>Ho<wbr/>Yo<wbr/>Lab <wbr/>Cookie/<wbr/>Token</span></a><a href="#md:about-redeem-function"><span>About <wbr/>Redeem <wbr/>Function</span></a><a href="#md:guides"><span>Guides</span></a><a href="#md:disclaimer"><span>Disclaimer</span></a></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>node-hoyolab - v2.0.0</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div></body></html>

@@ -7,9 +7,6 @@ api.text
 api
 coverage
 .env
-docs
-docs/.docusaurus
-docs/build
 guide.md
 guide.html
 typedoc.json
