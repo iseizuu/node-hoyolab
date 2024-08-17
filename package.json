@@ -1,7 +1,7 @@
 {
   "name": "node-hoyolab",
   "version": "2.0.0",
-  "description": "node-hoyolab is an unofficial API Wrapper library developed to integrate with the [Hoyolab API](https://github.com/hoyolab/hoyolab-api), which provides a more convenient way to access the Hoyolab API.",
+  "description": "node-hoyolab is an unofficial API Wrapper library developed to integrate with the Hoyolab, which provides a more convenient way to access the Hoyolab API.",
   "exports": {
     ".": {
       "import": "./dist/esm/index.mjs",
