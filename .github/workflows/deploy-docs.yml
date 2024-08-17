@@ -40,12 +40,12 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn ci
+        run: npx ci
 
       - name: Install Docs dependencies
         run: |
           cd docs
-          yarn ci
+          npx ci
 
       - name: Build website
         run: |
