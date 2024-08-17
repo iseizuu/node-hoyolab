@@ -61,7 +61,7 @@
     "zenlesszonezero-api",
     "zzz"
   ],
-  "author": "Ashary Vermaysha",
+  "author": "Yuxina Iseizuu",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/iseizuu/node-hoyolab/issues"
@@ -91,7 +91,7 @@
       "ts-node/register"
     ]
   },
-  "packageManager": "^npm@9.0.0",
+  "packageManager": "yarn@1.22.10",
   "devDependencies": {
     "@commitlint/cli": "17.6.6",
     "@commitlint/config-conventional": "17.6.6",
