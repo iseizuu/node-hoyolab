@@ -5,7 +5,7 @@
         <a href="https://www.npmjs.com/package/node-hoyolab">
             <img src="https://img.shields.io/npm/v/node-hoyolab.svg?logo=npm&logoColor=fff&label=NPM+package&color=red" alt="Node-Hoyolab NPM" />
         </a>
-        <a href="https://www.npmjs.com/package/hoyoapi" target="_blank">
+        <a href="https://www.npmjs.com/package/node-hoyolab" target="_blank">
             <img src="https://img.shields.io/npm/dt/node-hoyolab.svg?style=flat-square" alt="Total Downloads" />
         </a>
         <a href="https://github.com/iseizuu/node-hoyolab/blob/master/LICENSE">
