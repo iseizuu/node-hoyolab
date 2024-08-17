@@ -1,0 +1,124 @@
+{
+  "name": "node-hoyolab",
+  "version": "2.0.0",
+  "description": "node-hoyolab is an unofficial API Wrapper library developed to integrate with the [Hoyolab API](https://github.com/hoyolab/hoyolab-api), which provides a more convenient way to access the Hoyolab API.",
+  "exports": {
+    ".": {
+      "import": "./dist/esm/index.mjs",
+      "require": "./dist/cjs/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./gi": {
+      "import": "./dist/esm/client/gi/index.mjs",
+      "require": "./dist/cjs/client/gi/index.js",
+      "types": "./dist/types/client/gi/index.d.ts"
+    },
+    "./hi": {
+      "import": "./dist/esm/client/hi/index.mjs",
+      "require": "./dist/cjs/client/hi/index.js",
+      "types": "./dist/types/client/hi/index.d.ts"
+    },
+    "./hsr": {
+      "import": "./dist/esm/client/hsr/index.mjs",
+      "require": "./dist/cjs/client/hsr/index.js",
+      "types": "./dist/types/client/hsr/index.d.ts"
+    },
+    "./zzz": {
+      "import": "./dist/esm/client/zzz/index.mjs",
+      "require": "./dist/cjs/client/zzz/index.js",
+      "types": "./dist/types/client/zzz/index.d.ts"
+    },
+    "./hoyolab": {
+      "import": "./dist/esm/client/hoyolab/index.mjs",
+      "require": "./dist/cjs/client/hoyolab/index.js",
+      "types": "./dist/types/client/hoyolab/index.d.ts"
+    }
+  },
+  "types": "./dist/types/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.mjs",
+  "scripts": {
+    "prepare": "husky install",
+    "format": " npx prettier --ignore-path .gitignore \"**/*.{ts,js,json,mjs,tsx}\" -w",
+    "lint": "eslint --ignore-path .gitignore \"**/*.{ts,js,json,mjs,tsx}\" --fix",
+    "build": "ts-node scripts/build.ts",
+    "test": "npm run type-check && ava",
+    "test:coverage": "npm run type-check && c8 ava",
+    "test:watch": "ava --watch",
+    "type-check": "tsc --noEmit",
+    "docs": "typedoc --options typedoc.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iseizuu/node-hoyolab.git"
+  },
+  "keywords": [
+    "hoyolab-api",
+    "hoyoverse-api",
+    "genshin-api",
+    "honkai-api",
+    "hoyolab",
+    "zenlesszonezero-api",
+    "zzz"
+  ],
+  "author": "Ashary Vermaysha",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iseizuu/node-hoyolab/issues"
+  },
+  "homepage": "https://github.com/iseizuu/node-hoyolab#readme",
+  "lint-staged": {
+    "*.{ts,tsx,js,json}": [
+      "prettier --write --ignore-unknown"
+    ],
+    "*.{ts,tsx}": "eslint --fix"
+  },
+  "files": [
+    "dist/**/*"
+  ],
+  "engines": {
+    "node": ">=8.17"
+  },
+  "ava": {
+    "files": [
+      "tests/**/*.test.ts"
+    ],
+    "timeout": "5m",
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register"
+    ]
+  },
+  "packageManager": "^npm@9.0.0",
+  "devDependencies": {
+    "@commitlint/cli": "17.6.6",
+    "@commitlint/config-conventional": "17.6.6",
+    "@types/eslint": "latest",
+    "@types/node": "20.3.3",
+    "@types/prettier": "^3.0.0",
+    "@types/sinon": "^10.0.15",
+    "@typescript-eslint/eslint-plugin": "5.61.0",
+    "@typescript-eslint/parser": "5.61.0",
+    "ava": "^5.2.0",
+    "c8": "^8.0.0",
+    "concurrently": "^8.0.1",
+    "dotenv": "^16.0.3",
+    "esbuild": "^0.18.0",
+    "eslint": "8.44.0",
+    "eslint-config-prettier": "8.8.0",
+    "husky": "8.0.3",
+    "lint-staged": "13.2.3",
+    "nock": "^13.3.0",
+    "prettier": "2.8.8",
+    "sinon": "^15.0.3",
+    "tiny-glob": "^0.2.9",
+    "ts-node": "^10.9.1",
+    "tsx": "^3.12.6",
+    "typedoc": "^0.26.5",
+    "typedoc-plugin-markdown": "^4.2.5",
+    "typescript": "5.1.6"
+  },
+  "dependencies": {}
+}
