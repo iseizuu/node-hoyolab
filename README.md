@@ -69,7 +69,7 @@ because the the API/site [Genshin Impact Gift](https://genshin.hoyoverse.com/en/
 
 For detailed guides, see the following:
 
-- [Example Usage](./guide.html)
+- [Example Usage](https://hoyolab-docs.aizuu.my.id/media/guide.html)
 
 
 ## Disclaimer
