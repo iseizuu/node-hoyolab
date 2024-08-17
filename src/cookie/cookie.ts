@@ -44,7 +44,9 @@ export class Cookie {
 
       cookies.set(key, val)
 
-      if (['ltuid_v2', 'account_id', 'account_id_v2'].includes(cookieSplited[0])) {
+      if (
+        ['ltuid_v2', 'account_id', 'account_id_v2'].includes(cookieSplited[0])
+      ) {
         cookies.set(key, parseInt(cookies.get(key), 10))
       } else if (cookieSplited[0] === 'mi18nLang') {
         cookies.set(key, Language.parseLang(cookies.get(key)))

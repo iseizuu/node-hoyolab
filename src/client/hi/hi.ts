@@ -235,4 +235,3 @@ export class HonkaiImpact {
     return this.redeem.claim(code)
   }
 }
-

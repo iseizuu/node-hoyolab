@@ -36,7 +36,7 @@ export class HSRRecordModule {
     private lang: LanguageEnum,
     private region: string | null,
     private uid: number | null,
-  ) { }
+  ) {}
 
   /**
    * Retrieves the characters associated with the provided region and UID.
@@ -68,7 +68,7 @@ export class HSRRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -115,7 +115,7 @@ export class HSRRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -161,7 +161,7 @@ export class HSRRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -219,7 +219,7 @@ export class HSRRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -235,4 +235,3 @@ export class HSRRecordModule {
     return res.data as IHSRForgottenHall
   }
 }
-

@@ -182,4 +182,3 @@ export class Hoyolab {
   }
   /* c8 ignore stop */
 }
-

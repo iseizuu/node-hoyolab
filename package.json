@@ -37,6 +37,9 @@
   "types": "./dist/types/index.d.ts",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "prepare": "husky install",
     "format": " npx prettier --ignore-path .gitignore \"**/*.{ts,js,json,mjs,tsx}\" -w",
@@ -73,9 +76,6 @@
     ],
     "*.{ts,tsx}": "eslint --fix"
   },
-  "files": [
-    "dist/**/*"
-  ],
   "engines": {
     "node": ">=8.17"
   },

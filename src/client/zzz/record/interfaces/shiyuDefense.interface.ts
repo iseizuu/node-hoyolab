@@ -76,7 +76,6 @@ export interface ZZZFloorDetail {
   challengeTime: string
   zoneName: string
   floorChallengeTime: ZZZShyiuDefenseTime
-  
 }
 export interface ZZZShiyuDefense {
   schedule_id: number

@@ -285,4 +285,3 @@ export class HIRecordModule {
     return res.data as IHIElysian
   }
 }
-

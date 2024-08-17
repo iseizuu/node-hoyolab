@@ -1,4 +1,4 @@
-import { Abyss, ShiyuDefense } from './record.enum';
+import { Abyss, ShiyuDefense } from './record.enum'
 import { NodeHoyoError } from '../../../error'
 import { LanguageEnum } from '../../../language'
 import { HTTPRequest } from '../../../request'
@@ -11,9 +11,9 @@ import {
   ZZZ_RECORD_HOLLOW_ZERO,
 } from '../../../routes'
 import { ZZZCharacterFull, ZZZNote, ZZZRecord } from './interfaces'
-import { ZZZShiyuDefense } from './interfaces/shiyuDefense.interface';
-import { ZZZAbyss, ZZZAbyssType } from './interfaces/abyss.interface';
-import { ZZZHollowZero } from './interfaces/hollowZero.interface';
+import { ZZZShiyuDefense } from './interfaces/shiyuDefense.interface'
+import { ZZZAbyss, ZZZAbyssType } from './interfaces/abyss.interface'
+import { ZZZHollowZero } from './interfaces/hollowZero.interface'
 
 /**
  * HSRRecordModule class provides methods to interact with Honkai Star Rail record module endpoints.
@@ -36,7 +36,7 @@ export class ZZZRecordModule {
     private lang: LanguageEnum,
     private region: string | null,
     private uid: number | null,
-  ) { }
+  ) {}
 
   /**
    * Retrieves the records associated with the provided region and UID.
@@ -68,7 +68,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -112,7 +112,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -159,7 +159,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -205,7 +205,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -237,9 +237,7 @@ export class ZZZRecordModule {
       throw new NodeHoyoError('UID parameter is missing or failed to be filled')
     }
 
-    if (
-      Object.values(ShiyuDefense).includes(scheduleType) === false
-    ) {
+    if (Object.values(ShiyuDefense).includes(scheduleType) === false) {
       throw new NodeHoyoError('The given scheduleType parameter is invalid !')
     }
 
@@ -263,7 +261,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -291,9 +289,7 @@ export class ZZZRecordModule {
     if (!this.region || !this.uid) {
       throw new NodeHoyoError('UID parameter is missing or failed to be filled')
     }
-    if (
-      Object.values(Abyss).includes(abyssType) === false
-    ) {
+    if (Object.values(Abyss).includes(abyssType) === false) {
       throw new NodeHoyoError('The given abyss type parameter is invalid !')
     }
 
@@ -316,7 +312,7 @@ export class ZZZRecordModule {
     if (res.retcode !== 0) {
       throw new NodeHoyoError(
         res.message ??
-        'Failed to retrieve data, please double-check the provided UID.',
+          'Failed to retrieve data, please double-check the provided UID.',
         res.retcode,
         {
           response: res,
@@ -342,4 +338,3 @@ export class ZZZRecordModule {
     return `https://act-webstatic.hoyoverse.com/game_record/zzz/role_square_avatar/role_square_avatar_${avatarId}.png`
   }
 }
-

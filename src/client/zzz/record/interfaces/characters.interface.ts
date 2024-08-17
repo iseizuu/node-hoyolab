@@ -5,10 +5,9 @@ export interface ZZZEquipment {
   name: string
   icon: string
   properties: {
-    property_name: string,
-    property_id: number,
-    base: string,
-
+    property_name: string
+    property_id: number
+    base: string
   }[]
 }
 export interface ZZZWeapon {

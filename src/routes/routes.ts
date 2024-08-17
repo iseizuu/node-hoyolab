@@ -19,7 +19,10 @@ const getEventName = (game: GamesEnum) => {
     return 'sol'
   } else if (game === GamesEnum.HONKAI_IMPACT) {
     return 'mani'
-  } else if (game === GamesEnum.HONKAI_STAR_RAIL || GamesEnum.ZENLESS_ZONE_ZERO) {
+  } else if (
+    game === GamesEnum.HONKAI_STAR_RAIL ||
+    GamesEnum.ZENLESS_ZONE_ZERO
+  ) {
     return 'luna/os'
   }
 

@@ -20,9 +20,9 @@ export interface ZZZNote {
     total: number
   }
   surveyPoints: {
-    num: number;
-    total: number;
-    isMaxLevel: boolean;
+    num: number
+    total: number
+    isMaxLevel: boolean
   }
   abyss_refresh: number
 }

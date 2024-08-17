@@ -230,4 +230,3 @@ export class ZenlessZoneZero {
     return this.redeem.claim(code)
   }
 }
-

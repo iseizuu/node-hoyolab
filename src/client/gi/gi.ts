@@ -330,4 +330,3 @@ export class GenshinImpact {
     return this.redeem.claim(code)
   }
 }
-
