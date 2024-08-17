@@ -21,7 +21,7 @@ This is a NodeJS library designed as a connector to the Official HoYoLab API, co
 
 This repository is forked from [HoyoApi](https://github.com/vermaysha/hoyoapi/), which is no longer maintained. Therefore, I have refactored the code, added new features, and will continue to maintain and update this repository.
 
-[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](./docs/ 'Go to project documentation')
+[![view - Documentation](https://img.shields.io/badge/view-Documentation-blue?style=for-the-badge)](https://hoyolab-docs.aizuu.my.id/ 'Go to project documentation')
 
 ## Install
 
