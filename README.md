@@ -28,10 +28,10 @@ This repository is forked from [HoyoApi](https://github.com/vermaysha/hoyoapi/),
 [![Version](https://nodei.co/npm/node-hoyolab.png?compact=true)](https://nodei.co/npm/node-hoyolab)
 
 For NPM <br/>
-`npm install hoyoapi`
+`npm install node-hoyolab`
 
 For Yarn <br/>
-`yarn install hoyoapi`
+`yarn install node-hoyolab`
 
 ## Features
 
