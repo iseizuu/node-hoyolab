@@ -40,6 +40,7 @@ import glob from 'tiny-glob'
       './src/client/hi/index.ts',
       './src/client/hoyolab/index.ts',
       './src/client/hsr/index.ts',
+      './src/client/zzz/index.ts',
     ],
     outdir: './dist/esm',
     bundle: true,
