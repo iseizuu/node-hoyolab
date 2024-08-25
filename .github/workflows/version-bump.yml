@@ -19,22 +19,32 @@ jobs:
           node-version: '16'
 
       - name: Install dependencies
-        run: npm install
+        run: yarn install
 
-      - name: Bump version and push
+      - name: Bump version
+        run: |
+          yarn version --patch --no-commit-hooks --no-git-tag-version
+
+      - name: Get new version
+        id: new_version
+        run: echo "NEW_VERSION=$(node -p -e \"require('./package.json').version\")" >> $GITHUB_ENV
+
+      - name: Commit and push changes
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          npm version patch -m "Bump version to %s [skip ci]"
+          git add package.json yarn.lock
+          git commit -m "Bump version to ${{ env.NEW_VERSION }} [skip ci]"
+          git tag "v${{ env.NEW_VERSION }}"
           git push --follow-tags
 
       - name: Create a pull request for the new version
         uses: peter-evans/create-pull-request@v5
         with:
           branch: bump-version
-          commit-message: "Bump version to ${{ steps.bump.outputs.new-version }}"
-          title: "Bump version to ${{ steps.bump.outputs.new-version }}"
-          body: "This PR bumps the package version to ${{ steps.bump.outputs.new-version }}."
+          commit-message: "Bump version to ${{ env.NEW_VERSION }}"
+          title: "Bump version to ${{ env.NEW_VERSION }}"
+          body: "This PR bumps the package version to ${{ env.NEW_VERSION }}."
           labels: version-bump
 
   notify-users:
@@ -44,4 +54,4 @@ jobs:
       - name: Send notification to users
         run: |
           echo "Sending notification to users about the new version..."
-          # You can customize this step to send notifications through email, Slack, or other channels.
+          # Customize this step to send notifications through email, Slack, or other channels.
