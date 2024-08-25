@@ -16,7 +16,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '16'
 
       - name: Install dependencies
         run: yarn install
@@ -27,7 +27,9 @@ jobs:
 
       - name: Get new version
         id: new_version
-        run: echo "NEW_VERSION=$(node -p -e \"require('./package.json').version\")" >> $github.env
+        run: |
+          NEW_VERSION=$(node -p -e "require('./package.json').version")
+          echo "NEW_VERSION=$NEW_VERSION" >> $GITHUB_ENV
 
       - name: Commit and push changes
         run: |
