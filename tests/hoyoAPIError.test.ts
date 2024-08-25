@@ -1,14 +1,14 @@
-import { HoyoAPIError } from '../src'
+import { NodeHoyoError } from '../src'
 
 import test from 'ava'
 
-test('Should be return HoyoAPIError', (t) => {
+test('Should be return NodeHoyoError', (t) => {
   t.throws(
     () => {
-      throw new HoyoAPIError('Error')
+      throw new NodeHoyoError('Error')
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
       message: 'Error',
     },
   )

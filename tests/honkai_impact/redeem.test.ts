@@ -1,6 +1,6 @@
 import test from 'ava'
 import { honkaiImpact, cookie } from './setup'
-import { HonkaiImpact, HoyoAPIError } from '../../src'
+import { HonkaiImpact, NodeHoyoError } from '../../src'
 
 test('redeem.claim() should return be valid', async (t) => {
   const client = await honkaiImpact()
@@ -26,7 +26,7 @@ test('redeem.claim() should throw when UID is nullable', async (t) => {
       await client.redeem.claim('NEWCHAP')
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

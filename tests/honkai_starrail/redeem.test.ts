@@ -1,6 +1,6 @@
 import test from 'ava'
 import { hsr, cookie } from './setup'
-import { HonkaiStarRail, HoyoAPIError } from '../../src'
+import { HonkaiStarRail, NodeHoyoError } from '../../src'
 
 test('redeem.claim() should return be valid', async (t) => {
   const client = await hsr()
@@ -26,7 +26,7 @@ test('redeem.claim() should throw when UID is nullable', async (t) => {
       await client.redeem.claim('STARRAILGIFT')
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

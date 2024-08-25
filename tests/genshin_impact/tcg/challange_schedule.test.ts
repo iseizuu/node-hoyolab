@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from '../setup'
-import { GenshinImpact, HoyoAPIError } from '../../../src'
+import { GenshinImpact, NodeHoyoError } from '../../../src'
 
 test('tcg.challengeSchedule() should return be valid', async (t) => {
   const client = await genshin()
@@ -51,7 +51,7 @@ test('tcg.challengeSchedule() should throw when UID is nullable', async (t) => {
       await client.tcg.challengeSchedule()
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

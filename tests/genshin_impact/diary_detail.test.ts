@@ -4,7 +4,7 @@ import {
   DiaryEnum,
   DiaryMonthEnum,
   GenshinImpact,
-  HoyoAPIError,
+  NodeHoyoError,
 } from '../../src'
 
 test('diary.detail() should return be valid', async (t) => {
@@ -55,7 +55,7 @@ test('diary.detail() should throw when type is invalid', async (t) => {
       await client.diary.detail(5 as DiaryEnum)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
@@ -68,7 +68,7 @@ test('diary.detail() should throw month type is invalid', async (t) => {
       await client.diary.detail(DiaryEnum.PRIMOGEMS, 10 as DiaryMonthEnum)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
@@ -81,7 +81,7 @@ test('diary.detail() should throw when UID is nullable', async (t) => {
       await client.diary.detail(DiaryEnum.MORA)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

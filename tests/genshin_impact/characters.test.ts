@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from './setup'
-import { GenshinImpact, HoyoAPIError } from '../../src'
+import { GenshinImpact, NodeHoyoError } from '../../src'
 
 test('record.characters() should return be valid', async (t) => {
   const client = await genshin()
@@ -149,7 +149,7 @@ test('record.characters() should throw when UID is nullable', async (t) => {
       await client.record.characters()
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
@@ -192,7 +192,7 @@ test('record.charactersSummary() should throw when UID is nullable', async (t) =
       await client.record.charactersSummary([10_000_007])
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

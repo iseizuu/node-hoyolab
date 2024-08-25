@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from '../setup'
-import { GenshinImpact, HoyoAPIError } from '../../../src'
+import { GenshinImpact, NodeHoyoError } from '../../../src'
 
 test('tcg.matchs() should return be valid', async (t) => {
   const client = await genshin()
@@ -74,7 +74,7 @@ test('tcg.matchs() should throw when UID is nullable', async (t) => {
       await client.tcg.matchs()
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

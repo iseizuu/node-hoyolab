@@ -9,7 +9,21 @@ export interface ZZZEquipment {
     property_id: number
     base: string
   }[]
+  main_properties: {
+    property_name: string
+    property_id: number
+    base: string
+  }[],
+  equip_suit: {
+    suit_id: number
+    name: string
+    own: number
+    desc1: string
+    desc2: string
+  },
+  equipment_type: number
 }
+
 export interface ZZZWeapon {
   id: number
   level: number
@@ -68,6 +82,11 @@ export interface ZZZSkills {
     title: string
     text: string
   }[]
+}
+
+export interface ZZZAvatar {
+  avatar: string
+  avatarFull: string
 }
 
 export interface ZZZCharacterFull extends ZZZCharacterBase {

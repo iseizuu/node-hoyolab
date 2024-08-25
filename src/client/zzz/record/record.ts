@@ -10,7 +10,7 @@ import {
   ZZZ_RECORD_ABYSS,
   ZZZ_RECORD_HOLLOW_ZERO,
 } from '../../../routes'
-import { ZZZCharacterFull, ZZZNote, ZZZRecord } from './interfaces'
+import { ZZZAvatar, ZZZCharacterFull, ZZZNote, ZZZRecord } from './interfaces'
 import { ZZZShiyuDefense } from './interfaces/shiyuDefense.interface'
 import { ZZZAbyss, ZZZAbyssType } from './interfaces/abyss.interface'
 import { ZZZHollowZero } from './interfaces/hollowZero.interface'
@@ -230,7 +230,7 @@ export class ZZZRecordModule {
    * @throws {NodeHoyoError} if the given scheduleType parameter is invalid.
    * @throws {NodeHoyoError} if failed to retrieve data, please double-check the provided UID.
    */
-  async shyiyuDefense(
+  async shiyuDefense(
     scheduleType: ShiyuDefense = ShiyuDefense.CURRENT,
   ): Promise<ZZZShiyuDefense> {
     if (!this.region || !this.uid) {
@@ -334,7 +334,10 @@ export class ZZZRecordModule {
    * @param {number} avatarId - The ID of the character's avatar.
    * @return {string} The URL of the character's avatar.
    */
-  getCharacterAvatar(avatarId: number): string {
-    return `https://act-webstatic.hoyoverse.com/game_record/zzz/role_square_avatar/role_square_avatar_${avatarId}.png`
+  getCharacterAvatar(avatarId: number): ZZZAvatar {
+    return {
+      avatar: `https://act-webstatic.hoyoverse.com/game_record/zzz/role_square_avatar/role_square_avatar_${avatarId}.png`,
+      avatarFull: `https://act-webstatic.hoyoverse.com/game_record/zzz/role_vertical_painting/role_vertical_painting_${avatarId}.png`,
+    }
   }
 }

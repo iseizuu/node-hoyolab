@@ -1,5 +1,5 @@
 import test from 'ava'
-import { Cookie, HoyoAPIError } from '../src'
+import { Cookie, NodeHoyoError } from '../src'
 
 test('parseCookie return should be valid', (t) => {
   const cookie = Cookie.parseCookie({
@@ -70,7 +70,7 @@ test('parseCookieString return should be throw errors', (t) => {
       Cookie.parseCookieString('mi18nLang=id-id')
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from './setup'
-import { DiaryMonthEnum, GenshinImpact, HoyoAPIError } from '../../src'
+import { DiaryMonthEnum, GenshinImpact, NodeHoyoError } from '../../src'
 
 test('diary.list() should return be valid', async (t) => {
   const client = await genshin()
@@ -84,7 +84,7 @@ test('diaryDetail() should throw when type is invalid', async (t) => {
       await client.diary.list((month.getMonth() + 1) as DiaryMonthEnum)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
@@ -97,7 +97,7 @@ test('diary.list() should throw when UID is nullable', async (t) => {
       await client.diary.list()
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

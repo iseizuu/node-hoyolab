@@ -9,3 +9,4 @@ coverage
 .env
 guide.md
 typedoc.json
+docs/CNAME

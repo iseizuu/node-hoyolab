@@ -1,6 +1,6 @@
 import {
   GenshinRegion,
-  HoyoAPIError,
+  NodeHoyoError,
   HsrRegion,
   Language,
   LanguageEnum,
@@ -23,12 +23,12 @@ test('toSnakeCase should return snake_case string', (t) => {
   t.deepEqual(res, 'test_error')
 })
 
-test('getGenshinRegion should throw HoyoAPIError', (t) => {
+test('getGenshinRegion should throw NodeHoyoError', (t) => {
   t.throws(
     () => {
       getGenshinRegion(128_983_343)
     },
-    { instanceOf: HoyoAPIError },
+    { instanceOf: NodeHoyoError },
   )
 })
 
@@ -39,12 +39,12 @@ test('getGenshinRegion return should be valid', (t) => {
   t.deepEqual(getGenshinRegion(92_342_343), GenshinRegion.CHINA_TAIWAN)
 })
 
-test('getHsrRegion should throw HoyoAPIError', (t) => {
+test('getHsrRegion should throw NodeHoyoError', (t) => {
   t.throws(
     () => {
       getHsrRegion(128_983_343)
     },
-    { instanceOf: HoyoAPIError },
+    { instanceOf: NodeHoyoError },
   )
 })
 

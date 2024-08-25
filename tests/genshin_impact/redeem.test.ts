@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from './setup'
-import { GenshinImpact, HoyoAPIError } from '../../src'
+import { GenshinImpact, NodeHoyoError } from '../../src'
 
 test('redeem.claim() should return be valid', async (t) => {
   const client = await genshin()
@@ -26,7 +26,7 @@ test('redeem.claim() should throw when UID is nullable', async (t) => {
       await client.redeem.claim('GENSHINGIFT')
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

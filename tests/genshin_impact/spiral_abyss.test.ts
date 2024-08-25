@@ -1,6 +1,6 @@
 import test from 'ava'
 import { genshin, cookie } from './setup'
-import { SpiralAbyssScheduleEnum, GenshinImpact, HoyoAPIError } from '../../src'
+import { SpiralAbyssScheduleEnum, GenshinImpact, NodeHoyoError } from '../../src'
 
 test('record.spiralAbyss() should return be valid', async (t) => {
   const client = await genshin()
@@ -173,7 +173,7 @@ test('record.spiralAbyss() should throw when schedule is invalid', async (t) => 
       await client.record.spiralAbyss(10 as SpiralAbyssScheduleEnum)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
@@ -186,7 +186,7 @@ test('record.spiralAbyss() should throw when UID is nullable', async (t) => {
       await client.record.spiralAbyss(SpiralAbyssScheduleEnum.CURRENT)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

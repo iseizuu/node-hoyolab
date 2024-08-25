@@ -1,7 +1,7 @@
 import test, { ExecutionContext } from 'ava'
 import { hsr } from './setup'
 import {
-  HoyoAPIError,
+  NodeHoyoError,
   IDailyInfo,
   IDailyReward,
   IDailyRewards,
@@ -95,7 +95,7 @@ test('daily.reward() should throw error', async (t) => {
       await client.daily.reward(33)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })

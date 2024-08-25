@@ -1,6 +1,6 @@
 import test, { ExecutionContext } from 'ava'
 import { genshin } from './setup'
-import { HoyoAPIError, IDailyInfo, IDailyReward } from '../../src'
+import { NodeHoyoError, IDailyInfo, IDailyReward } from '../../src'
 
 function dailyInfoTest(t: ExecutionContext, res: IDailyInfo) {
   t.is(typeof res.total_sign_day, 'number')
@@ -86,7 +86,7 @@ test('daily.reward() should throw error', async (t) => {
       await client.daily.reward(33)
     },
     {
-      instanceOf: HoyoAPIError,
+      instanceOf: NodeHoyoError,
     },
   )
 })
