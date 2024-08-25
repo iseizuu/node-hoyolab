@@ -27,7 +27,7 @@ jobs:
 
       - name: Get new version
         id: new_version
-        run: echo "NEW_VERSION=$(node -p -e \"require('./package.json').version\")" >> $GITHUB_ENV
+        run: echo "NEW_VERSION=$(node -p -e \"require('./package.json').version\")" >> $github.env
 
       - name: Commit and push changes
         run: |
