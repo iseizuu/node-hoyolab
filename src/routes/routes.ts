@@ -85,6 +85,9 @@ export const GENSHIN_RECORD_CHARACTER_API = `${BBS_API}/game_record/genshin/api/
 export const GENSHIN_RECORD_AVATAR_BASIC_INFO_API = `${BBS_API}/game_record/genshin/api/avatarBasicInfo`
 export const GENSHIN_RECORD_SPIRAL_ABYSS_API = `${BBS_API}/game_record/genshin/api/spiralAbyss`
 export const GENSHIN_RECORD_DAILY_NOTE_API = `${BBS_API}/game_record/genshin/api/dailyNote`
+export const GENSHIN_RECORD_HARD_CHALLENGE_API = `${BBS_API}/game_record/genshin/api/hard_challenge` // Stygian Onslaught
+export const GENSHIN_RECORD_ROLE_COMBAT_API = `${BBS_API}/game_record/genshin/api/role_combat` // Imaginarium Theater
+export const GENSHIN_RECORD_ACT_CALENDAR_API = `${BBS_API}/game_record/genshin/api/act_calendar` // Banners/Events/Activities
 
 /* Genshin Impact Diary */
 export const GENSHIN_DIARY_LIST_API = `${HK4E_API}/event/ysledgeros/month_info`

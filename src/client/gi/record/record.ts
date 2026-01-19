@@ -2,17 +2,23 @@ import { NodeHoyoError } from '../../../error'
 import { LanguageEnum } from '../../../language'
 import { HTTPRequest } from '../../../request'
 import {
+  GENSHIN_RECORD_ACT_CALENDAR_API,
   GENSHIN_RECORD_AVATAR_BASIC_INFO_API,
   GENSHIN_RECORD_CHARACTER_API,
   GENSHIN_RECORD_DAILY_NOTE_API,
+  GENSHIN_RECORD_HARD_CHALLENGE_API,
   GENSHIN_RECORD_INDEX_API,
+  GENSHIN_RECORD_ROLE_COMBAT_API,
   GENSHIN_RECORD_SPIRAL_ABYSS_API,
 } from '../../../routes'
 import {
+  IGenshinActCalendar,
   IGenshinCharacterSummary,
   IGenshinCharacters,
   IGenshinDailyNote,
+  IGenshinHardChallenge,
   IGenshinRecord,
+  IGenshinRoleCombat,
   IGenshinSpiralAbyss,
 } from './interfaces'
 import { SpiralAbyssScheduleEnum } from './record.enum'
@@ -292,5 +298,148 @@ export class GenshinRecordModule {
     }
 
     return res.data as IGenshinDailyNote
+  }
+
+  /**
+   * Retrieve the act calendar (Banners/events/activities) information for a Genshin Impact user.
+   * @returns {Promise<IGenshinActCalendar>} The act calendar information including events, banners, and activities.
+   * @throws {NodeHoyoError} if the UID parameter is missing or failed to be filled.
+   * @remarks
+   * This method sends a request to the Genshin Impact API to get the act calendar information for a user.
+   * The user's region and UID must be set before calling this method, otherwise an error will be thrown.
+   */
+  async actCalendar(): Promise<IGenshinActCalendar> {
+    if (!this.region || !this.uid) {
+      throw new NodeHoyoError('UID parameter is missing or failed to be filled')
+    }
+
+    this.request
+      .setQueryParams({
+        server: this.region,
+        role_id: this.uid,
+      })
+      .setDs()
+
+    const {
+      response: res,
+      headers,
+      body,
+      params,
+    } = await this.request.send(GENSHIN_RECORD_ACT_CALENDAR_API, 'POST')
+
+    if (res.retcode !== 0) {
+      throw new NodeHoyoError(
+        res.message ??
+          'Failed to retrieve data, please double-check the provided UID.',
+        res.retcode,
+        {
+          response: res,
+          request: {
+            body,
+            headers,
+            params,
+          },
+        },
+      )
+    }
+
+    return res.data as IGenshinActCalendar
+  }
+
+  /**
+   * Retrieve the hard challenge (Stygian Onslaught) information for a Genshin Impact user.
+   * @argument needDetail - Whether to include detailed information in the response.
+   * @returns {Promise<IGenshinHardChallenge>} The hard challenge information including schedules, attempts, and results.
+   * @throws {NodeHoyoError} if the UID parameter is missing or failed to be filled.
+   * @remarks
+   * This method sends a request to the Genshin Impact API to get the hard challenge information for a user.
+   * The user's region and UID must be set before calling this method, otherwise an error will be thrown.
+   */
+  async stygianOnslaught(needDetail: boolean = true): Promise<IGenshinHardChallenge> {
+    if (!this.region || !this.uid) {
+      throw new NodeHoyoError('UID parameter is missing or failed to be filled')
+    }
+
+    this.request
+      .setQueryParams({
+        server: this.region,
+        role_id: this.uid,
+        need_detail: needDetail ? 'true' : 'false',
+      })
+      .setDs()
+
+    const {
+      response: res,
+      headers,
+      body,
+      params,
+    } = await this.request.send(GENSHIN_RECORD_HARD_CHALLENGE_API)
+
+    if (res.retcode !== 0) {
+      throw new NodeHoyoError(
+        res.message ??
+          'Failed to retrieve data, please double-check the provided UID.',
+        res.retcode,
+        {
+          response: res,
+          request: {
+            body,
+            headers,
+            params,
+          },
+        },
+      )
+    }
+
+    return res.data as IGenshinHardChallenge
+  }
+
+
+  /**
+   * Retrieve the role combat (Imaginarium Theater) information for a Genshin Impact user.
+   * @argument needDetail - Whether to include detailed information in the response.
+   * @returns {Promise<IGenshinRoleCombat>} The role combat information including rounds, statistics, and tarot collection.
+   * @throws {NodeHoyoError} if the UID parameter is missing or failed to be filled.
+   * @remarks
+   * This method sends a request to the Genshin Impact API to get the role combat information for a user.
+   * The user's region and UID must be set before calling this method, otherwise an error will be thrown.
+   */
+  async imaginariumTheater(needDetail: boolean = true): Promise<IGenshinRoleCombat> {
+    if (!this.region || !this.uid) {
+      throw new NodeHoyoError('UID parameter is missing or failed to be filled')
+    }
+
+    this.request
+      .setQueryParams({
+        server: this.region,
+        role_id: this.uid,
+        need_detail: needDetail ? 'true' : 'false',
+      })
+      .setDs()
+
+    const {
+      response: res,
+      headers,
+      body,
+      params,
+    } = await this.request.send(GENSHIN_RECORD_ROLE_COMBAT_API)
+
+    if (res.retcode !== 0) {
+      throw new NodeHoyoError(
+        res.message ??
+          'Failed to retrieve data, please double-check the provided UID.',
+        res.retcode,
+        {
+          response: res,
+          request: {
+            body,
+            headers,
+            params,
+          },
+        },
+      )
+    }
+
+    return res.data as IGenshinRoleCombat
   }
 }
